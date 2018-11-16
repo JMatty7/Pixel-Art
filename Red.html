@@ -1,0 +1,49 @@
+<html>
+<style>
+canvas{
+border:solid pink 0px;
+background-color:white;
+}
+</style>
+<canvas id = "redboy" style="height:400px;width:800px;">
+</canvas>
+<script>
+pixel1 = [0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0]
+pixel2 = [0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0]
+pixel3 = [0,0,0,1,2,2,2,2,2,2,2,2,1,0,0,0]
+pixel4 = [0,0,0,1,2,2,2,2,2,2,2,2,1,0,0,0]
+pixel5 = [0,0,1,1,1,2,0,0,0,0,2,1,1,1,0,0]
+pixel6 = [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0]
+pixel7 = [0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,0]
+pixel8 = [0,1,0,0,0,0,1,0,0,1,0,0,0,0,1,0]
+pixel9 = [0,0,1,1,0,0,1,0,0,1,0,0,1,1,0,0]
+pixel10 = [0,0,1,1,1,0,0,2,2,0,0,1,1,1,0,0]
+pixel11 = [0,1,0,0,1,1,1,1,1,1,1,1,0,0,1,0]
+pixel12 = [0,1,0,0,1,1,1,1,1,1,1,1,0,0,1,0]
+pixel13 = [0,0,1,1,1,2,2,1,1,2,2,1,1,1,0,0]
+pixel14 = [0,0,0,1,2,1,1,2,2,1,1,2,1,0,0,0]
+pixel15 = [0,0,0,1,2,2,2,1,1,2,2,2,1,0,0,0]
+pixel16 = [0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0]
+cvs = document.getElementById("redboy")
+ctx = cvs.getContext("2d")
+for(i=1;i<=16;i++)
+{
+	for(k=0;k<=15;k++)
+	{
+		if(((window["pixel"+i])[k]) == 0)
+		{
+			ctx.fillStyle = '#FFFFFF';
+		}
+		else if(((window["pixel"+i])[k]) == 1)
+		{
+			ctx.fillStyle = '#000000';
+		}
+		else if(((window["pixel"+i])[k]) == 2)
+		{
+			ctx.fillStyle = '#FF0000';
+		}
+		ctx.fillRect(8*k,(i-1)*8,8,8)
+		ctx.stroke();
+	}
+}
+</script>
